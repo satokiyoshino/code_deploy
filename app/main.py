@@ -6,6 +6,6 @@ app = FastAPI()
 def root():
     return { 'message': 'Hello World' }
 
-@app.get('member')
+@app.get('/member')
 def member():
     return { 'message': 'get MEMBER' }
