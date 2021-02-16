@@ -3,7 +3,7 @@ version: 2.1
 orbs:
     # circleci/aws-ecr@6.1.0というorbをaws-ecrというaliasをつけて扱う
     aws-ecr: circleci/aws-ecr@6.1.0
-    aws-ecs: circleci/aws-ecs@0.0.8
+    aws-ecs: circleci/aws-ecs@2.0.0
 
 workflows:
     # build_and_push_imageという名前のworkflowを定義
@@ -21,4 +21,4 @@ workflows:
             family: 'fastapi-task'
             cluster-name: 'custom-cluster'
             service-name: 'fastpi-service'
-            container-image-name-updates: 'container=fastapi,tag=${CIRCLE_SHA1}'
+            container-image-name-updates: 'container=fastapi-container,tag=${CIRCLE_SHA1}'
