@@ -13,12 +13,12 @@ workflows:
         - aws-ecr/build-and-push-image:
             region: AWS_REGION
             account-url: AWS_ECR_ACCOUNT_URL
-            repo: 'cicdtest'
+            repo: 'fastapi'
             tag: "${CIRCLE_SHA1}"
         - aws-ecs/deploy-service-update:
             requires:
                 - aws-ecr/build-and-push-image
-            family: 'testserver'
-            cluster-name: 'circleciTest'
-            service-name: 'CircleCItestService'
-            container-image-name-updates: 'container=testserverContainer,tag=${CIRCLE_SHA1}'
+            family: 'fastapi-task'
+            cluster-name: 'custom-cluster'
+            service-name: 'fastpi-service'
+            container-image-name-updates: 'container=fastapi-task,tag=${CIRCLE_SHA1}'
