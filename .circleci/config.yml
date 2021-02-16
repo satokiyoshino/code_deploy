@@ -21,4 +21,4 @@ workflows:
             family: 'fastapi-task'
             cluster-name: 'custom-cluster'
             service-name: 'fastpi-service'
-            container-image-name-updates: 'container=fastapi-task,tag=${CIRCLE_SHA1}'
+            container-image-name-updates: 'container=fastapi,tag=${CIRCLE_SHA1}'
