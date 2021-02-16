@@ -18,7 +18,7 @@ workflows:
         - aws-ecs/deploy-service-update:
             requires:
                 - aws-ecr/build-and-push-image
-            region: AWS_REGION
+            aws-region: AWS_REGION
             family: 'fastapi-task'
             cluster-name: 'custom-cluster'
             service-name: 'fastpi-service'
