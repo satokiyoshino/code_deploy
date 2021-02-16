@@ -21,5 +21,5 @@ workflows:
             aws-region: AWS_REGION
             family: 'fastapi-task'
             cluster-name: 'custom-cluster'
-            service-name: 'fastpi-service'
+            service-name: 'fastapi-service'
             container-image-name-updates: 'container=fastapi-container,tag=${CIRCLE_SHA1}'
